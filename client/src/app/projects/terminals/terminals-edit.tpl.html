@@ -1,0 +1,17 @@
+<div class="well">
+    <h4>Product terminals item</h4>
+    <hr>
+    <form name="form" crud-edit="terminal">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="terminal.name" class="span10" required autofocus>
+        <label>Description</label>
+        <textarea rows="8" cols="10" ng-model="terminal.desc" class="span10" required>
+        </textarea>
+        <label>Priority</label>
+        <input type="number" ng-model="terminal.priority" required>
+        <label>Hardware ID</label>
+        <input type="number" ng-model="terminal.hardware" required>
+        <hr>
+        <crud-buttons></crud-buttons>
+    </form>
+</div>

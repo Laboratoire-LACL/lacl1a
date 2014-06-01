@@ -1,0 +1,24 @@
+<table class="table table-bordered table-condensed table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Hardware ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="terminal in terminals" ng-click="edit(terminal.$id())">
+        <td>{{terminal.name}}</td>
+        <td>{{terminal.desc}}</td>
+        <td>{{terminal.priority}}</td>
+        <td>{{terminal.hardware}}</td>
+    </tr>
+    <tr ng-show="!terminals.length">
+        <td colspan="4">No terminal defined</td>
+    </tr>
+    </tbody>
+</table>
+<div class="well">
+    <button class="btn" ng-click="new()">New terminal</button>
+</div>
