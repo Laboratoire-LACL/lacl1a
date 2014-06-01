@@ -43,7 +43,6 @@ Il s'agit d'un projet complet avec un système de construction axée sur Angular
 * Alimenté par [ Grunt.js ] ( http://gruntjs.com/ )
 * Test écrit en utilisant la syntaxe [ Jasmine ] ( http://jasmine.github.io/ )
 * Essai sont exécutées par [ Karma Test Runner ] ( http://karma-runner.github.io/0.8/index.html ) ( intégrée à la construction Grunt.js )
-* Construction soutenir JS , CSS et AngularJS modèles minification
 * [ Bootstrap de Twitter ] ( http://getbootstrap.com/ ) avec le traitement des modèles moins intégrés dans la construction
 * [ Travis -CI ] ( https://travis-ci.org/ ) intégration
 
@@ -51,7 +50,7 @@ Il s'agit d'un projet complet avec un système de construction axée sur Angular
 
 ### Plate-forme et des outils
 
-Vous devez installer Node.js et puis les outils de développement . Node.js est livré avec un gestionnaire de paquets appelé [ npm ] ( http://npmjs.org ) pour l'installation d'applications et librairies nodejs.
+Vous devez installer Node.js et puis les outils de développement. Node.js est livré avec un gestionnaire de paquets appelé [ npm ] ( http://npmjs.org ) pour l'installation d'applications et librairies nodejs.
 * [Installer node.js ] ( http://nodejs.org/download/ ) ( nécessite la version node.js > = 0.8.4 )
 * Installez - Grunt CLI et Karma en tant que modules globeaux.
 
@@ -62,6 +61,7 @@ Vous devez installer Node.js et puis les outils de développement . Node.js est 
     cd ..
     cd client
     npm install
+    grunt build
     cd ..
     ```
 ## Course à pied
@@ -69,8 +69,8 @@ Vous devez installer Node.js et puis les outils de développement . Node.js est 
 * Exécutez le serveur
 
     `` `
-    serveur de cd
-    server.js de noeuds
+    cd server
+    node server.js
     cd ..
     `` `
 * Accédez à l'application à [ http://localhost:3000 ]
