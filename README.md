@@ -64,14 +64,14 @@ Vous devez installer Node.js et puis les outils de développement. Node.js est l
     grunt build
     cd ..
     ```
-## Course à pied
+## Execution
 ### Démarrer le serveur
 * Exécutez le serveur
 
-    `` `
+    ```
     cd server
     node server.js
     cd ..
-    `` `
+    ```
 * Accédez à l'application à [ http://localhost:3000 ]
 * Se connecter avec l'utilisateur admin définie dans `server/lib/initDB.js` .
