@@ -1,0 +1,84 @@
+<div class="well">
+    <h4>campaign</h4>
+    <hr>
+    <form name="form" crud-edit="campaign">
+        <div class="row-fluid">
+            <div class="span6">
+                <label>Name</label>
+                <input type="text" name="name" ng-model="campaign.name" class="span10" required autofocus>
+                <label>Capacity</label>
+                <input type="number" name="description" ng-model="campaign.capacity" class="span5" required>
+            </div>
+            <div class="span6">
+                <label>Start date</label>
+                <input type="text" name="name" ng-model="campaign.start" class="span5" required>
+                <label>End date</label>
+                <input type="text" name="name" ng-model="campaign.end" class="span5" required>
+            </div>
+        </div>
+        <hr>
+        <h4>campaign's terminals</h4>
+        <hr>
+        <div class="row-fluid">
+            <div class="span6">
+                <label>Currently in the campaign</label>
+                <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th class="span8">Name</th>
+                        <th class="span2">Estimation</th>
+                        <th class="span2">Tools</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="terminal in campaign.campaignTerminals">
+                        <td><a ng-click="viewterminalsItem(terminal)">{{terminalsLookup[terminal].name}}</a>
+                        </td>
+                        <td>{{terminalsLookup[terminal].hardware}}</td>
+                        <td>
+                            <button class="btn btn-mini btn-danger" ng-click="removeTerminalsItem(terminal)">
+                                Remove
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td>Estimation in total</td>
+                        <td>{{estimationInTotal()}}</td>
+                        <td>-</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="span6">
+                <label>Product terminals</label>
+                <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th class="span8">Name</th>
+                        <th class="span2">Estimation</th>
+                        <th class="span2">Tools</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="terminalsItem in terminals | filter:notSelected">
+                        <td>
+                            <a ng-click="viewterminalsItem(terminalsItem.$id())">{{terminalsItem.name}}</a>
+                        </td>
+                        <td>{{terminalsItem.hardware}}</td>
+                        <td>
+                            <button class="btn btn-mini" ng-click="addTerminal(terminalsItem)">Add to campaign
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <crud-buttons></crud-buttons>
+        </div>
+    </form>
+</div>
