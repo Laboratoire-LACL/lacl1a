@@ -28,7 +28,6 @@ angular.module('projects', ['resources.projects', 'terminals', 'campaigns', 'sec
   $scope.manageCampaigns = function (project) {
     $location.path('/projects/'+project.$id()+'/campaigns');
   };
-
   $scope.getMyRoles = function(project) {
     if ( security.currentUser ) {
       return project.getRoles(security.currentUser.id);
