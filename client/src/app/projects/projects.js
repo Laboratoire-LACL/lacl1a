@@ -11,8 +11,20 @@ angular.module('projects', ['resources.projects', 'terminals', 'campaigns', 'sec
       }],
       authenticatedUser: securityAuthorizationProvider.requireAuthenticatedUser
     }
-  });
+  })
+    $routeProvider.when('/projects/campaigns', {
+            templateUrl:'projects/campaigns/campaigns-list.tpl.html',
+            controller:'ProjectsViewCtrl',
+            resolve:{
+                projects:['Projects', function (Projects) {
+                    //TODO: fetch only for the current user
+                    return Projects.all();
+                }],
+                authenticatedUser: securityAuthorizationProvider.requireAuthenticatedUser
+            }
+      });
 }])
+
 
 .controller('ProjectsViewCtrl', ['$scope', '$location', 'projects', 'security', function ($scope, $location, projects, security) {
   $scope.projects = projects;
