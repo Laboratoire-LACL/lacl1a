@@ -2,7 +2,8 @@ angular.module('admin-users-edit',[
   'services.crud',
   'services.i18nNotifications',
   'admin-users-edit-uniqueEmail',
-  'admin-users-edit-validateEquals'
+  'admin-users-edit-validateEquals',
+  'admin-projects'
 ])
 
 .controller('UsersEditCtrl', ['$scope', '$location', 'i18nNotifications', 'user', function ($scope, $location, i18nNotifications, user) {

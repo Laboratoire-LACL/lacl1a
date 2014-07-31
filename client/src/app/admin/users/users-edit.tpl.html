@@ -1,7 +1,9 @@
 <div class="well">
+
     <form name="form" novalidate crud-edit="user">
         <legend>User</legend>
-        <gravatar email="user.email" size="200" class="img-polaroid pull-right"></gravatar>
+        <div class="row-fluid">
+            <div class="span6">
         <label for="email">E-mail</label>
         <input class="span6" type="email" id="email" name="email" ng-model="user.email" required unique-email>
         <span ng-show="showError('email', 'required')" class="help-inline">This field is required.</span>
@@ -23,7 +25,20 @@
         <span ng-show="showError('passwordRepeat', 'equal')" class="help-inline">Passwords do not match.</span>
         <label>Admin</label>
         <input type="checkbox" ng-model="user.admin">
+       </div >
+            <div class="span6" ng-controller= "ProjectsEditCtrl">
+                <legend>Project</legend>
+                <label>Name</label>
+                <input type="text" name="name" ng-model="project.name" class="span10" required autofocus>
+                <label>Description</label>
+                <textarea rows="10" cols="10" ng-model="project.desc" class="span10">
+                </textarea>
+            </div>
+        </div>
         <hr>
         <crud-buttons></crud-buttons>
+
     </form>
+
+
 </div>
